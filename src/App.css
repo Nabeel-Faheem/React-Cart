@@ -1,0 +1,297 @@
+/* CSS Boilerplate */
+
+:root {
+  --blue: #00BCD4;
+  --white: #fff;
+  --black: #333;
+  --red: rgb(209, 86, 86);
+  --green: rgb(10, 161, 10);
+  --wrap-padding: 20px;
+  --header-padding: 20px;
+  --main-padding: 30px;
+  --footer-padding: 10px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var( --white );
+  color: var( --black );
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, input, span {
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+.wrap {
+  max-width: 1000px;
+  width: 100%;
+  padding-left: var( --wrap-padding );
+  padding-right: var( --wrap-padding );
+  margin: 0 auto;
+}
+
+header {
+  padding-top: var( --header-padding );
+  padding-bottom: var( --header-padding );
+  background: var( --blue );
+  color: var( --white );
+}
+
+header a {
+  color: var( --white );
+}
+
+header a.active {
+  font-weight: bold;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+header .wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__left {
+  width: 20%;
+}
+
+.header__right {
+  width: 70%;
+}
+
+header nav ul {
+  text-align: right;
+}
+
+header nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+main {
+  padding-top: var( --main-padding );
+  padding-bottom: var( --main-padding );
+}
+
+.products .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 30%;
+  margin-bottom: 30px;
+  background: var( --blue );
+  color: var( --white );
+}
+
+.product img {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.product > h2, .product > p {
+  padding-left: var( --header-padding );
+  padding-right: var( --header-padding );
+}
+
+button {
+  display: block;
+  width: 80%;
+  outline: none;
+  padding: 10px;
+  border: 1px solid var( --blue );
+  margin: 20px auto 20px;
+  background: var( --white );
+  color: var( --blue );
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+
+button:hover {
+  background: var( --blue );
+  border-color: var( --white );
+  color: var( --white );
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table th:first-child, 
+table td:first-child, 
+table th:nth-child(2), 
+table td:nth-child(2),
+table th:nth-child(4), table td:nth-child(4),
+table th:nth-child(5), table td:nth-child(5) {
+  width: 12%;
+}
+
+th, 
+td {
+  width: 25%;
+  vertical-align: top;
+  text-align: left;
+  border: 1px solid var( --blue );
+  padding: 10px;
+}
+
+th {
+  background: var(--blue);
+  color: var( --white );
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+table img {
+  width: 100%;
+}
+
+.btn-group > button, 
+.btn-group > span {
+  width: 33%;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.btn-group > button:first-child {
+  border: 1px solid var( --green );
+  color: var( --green );
+}
+
+.btn-group > button:first-child:hover {
+  background: var( --green );
+  color: var( --white );
+}
+
+.btn-group > button:last-child {
+  border: 1px solid var( --red );
+  color: var( --red );
+}
+
+.btn-group > button:last-child:hover {
+  background: var( --red );
+  color: var( --white );
+}
+
+.btn-group > button:disabled {
+  opacity: .5;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+}
+
+.modal-inner {
+  max-width: 600px;
+  width: 100%;
+  position: absolute;
+  background: var( --white );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 20px;
+  text-align: center;
+  font-size: 22px;
+  animation: slideDown .3s ease-out forwards;
+}
+
+.close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.close::before, 
+.close::after {
+  content: '';
+  position: absolute;
+  background: var(--blue);
+  width: 2px;
+  height: 100%;
+}
+
+.close::before {
+  transform: rotate(45deg);
+}
+
+.close::after {
+  transform: rotate(-45deg);
+}
+
+/* .modal a {
+  margin-top: 20px;
+  display: inline-block;
+  font-size: 16px;
+  background: var(--blue);
+  padding: 8px 18px;
+  color: var(--white);
+  border: 1px solid var(--blue);
+  transition: all .2s;
+}
+
+.modal a:hover {
+  background: transparent;
+  color: var(--blue);
+} */
+
+@keyframes slideDown {
+  from {
+    top: 45%;
+  } to {
+    top: 50%;
+  }
+}
+
+footer {
+  background: var( --blue );
+  padding-top: var( --footer-padding );
+  padding-bottom: var( --footer-padding );
+  color: var( --white );
+  text-align: center;
+}
+
