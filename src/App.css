@@ -351,6 +351,8 @@ input:focus {
   font-size: 16px;
   line-height: 1;
   padding: 5px;
+  transform: translateY(-20px);
+  animation: errorSlide .5s ease-out forwards;
 }
 
 .loader {
@@ -384,6 +386,14 @@ input:focus {
     top: 45%;
   } to {
     top: 50%;
+  }
+}
+
+@keyframes errorSlide {
+  from {
+    transform: translateY(-20px)
+  } to {
+    transform: translateY(0);
   }
 }
 
