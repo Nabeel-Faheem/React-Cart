@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartProduct = ({ id, imgUrl, name, descp, quantity, removeFromCart, incrementProduct, decrementProduct }) => {
+const CartProduct = ({ id, imgUrl, name, descp, price, quantity, removeFromCart, incrementProduct, decrementProduct }) => {
     return (
         <tr>
             <td>
@@ -8,6 +8,7 @@ const CartProduct = ({ id, imgUrl, name, descp, quantity, removeFromCart, increm
             </td> 
             <td>{ name }</td> 
             <td className="product-descp">{ descp }</td> 
+            <td className="product-price">${ price }</td>
             <td className="product-quantity">
                 <div className="btn-group">
                     <button 

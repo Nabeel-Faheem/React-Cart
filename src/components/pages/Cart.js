@@ -14,11 +14,11 @@ import CartProduct from '../util/CartProduct';
 class Cart extends Component {
 
     // dispatch handlers
-    deleteFromCartHandler = ( productId ) => {
-        
+    deleteFromCartHandler = (productId) => {
+
         // delete item from cart
-        let cart = [ ...this.props.cart ];
-        let updatedCart = cart.filter(( product ) => product.id !== productId)
+        let cart = [...this.props.cart];
+        let updatedCart = cart.filter((product) => product.id !== productId)
 
         // send new cart in the payload
         this.props.dispatch({
@@ -29,14 +29,15 @@ class Cart extends Component {
         });
     }
 
-    incrementProductHandler = ( productId ) => {
-        
-        let cart = [ ...this.props.cart ];
-        let productToIncrement = cart.find(( product ) => product.id === productId);
+    incrementProductHandler = (productId) => {
+
+        // destrcture cart and implement calcuations
+        let cart = [...this.props.cart];
+        let productToIncrement = cart.find((product) => product.id === productId);
         productToIncrement.quantity++;
-        // console.log(cart.indexOf( productToIncrement ));
-        // const productIndex = cart.indexOf( productToIncrement );
-        // cart.splice( productIndex, 1 );
+        productToIncrement.totalPrice += productToIncrement.price;
+
+        // dispatch action
         this.props.dispatch({
             type: INCREMENT_QUANTITIY,
             payload: {
@@ -45,11 +46,15 @@ class Cart extends Component {
         });
     }
 
-    decrementProductHandler = ( productId ) => {
+    decrementProductHandler = (productId) => {
 
-        let cart = [ ...this.props.cart ];
-        let productToIncrement = cart.find(( product ) => product.id === productId);
-        productToIncrement.quantity--;
+        // destructure cart and perform calcuations
+        let cart = [...this.props.cart];
+        let productToDecrement = cart.find((product) => product.id === productId);
+        productToDecrement.quantity--;
+        productToDecrement.totalPrice -= productToDecrement.price;
+
+        // dispatch action
         this.props.dispatch({
             type: DECREMENT_QUANTITIY,
             payload: {
@@ -63,7 +68,7 @@ class Cart extends Component {
     // render
     render() {
 
-        if( this.props.cart.length === 0 ) {
+        if (this.props.cart.length === 0) {
             return (
                 <div className="cart">
                     <Wrap>
@@ -82,24 +87,26 @@ class Cart extends Component {
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Description</th>
+                                <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            { this.props.cart.map((item) => 
-                                <CartProduct 
-                                    key={ item.id }
-                                    id={ item.id }
-                                    imgUrl={ item.url }
-                                    name={ item.name }
-                                    descp={ item.description }
-                                    quantity={ item.quantity }
-                                    removeFromCart={ this.deleteFromCartHandler }
-                                    incrementProduct={ this.incrementProductHandler }
-                                    decrementProduct={ this.decrementProductHandler }
+                            {this.props.cart.map((item) =>
+                                <CartProduct
+                                    key={item.id}
+                                    id={item.id}
+                                    imgUrl={item.url}
+                                    name={item.name}
+                                    descp={item.description}
+                                    price={item.totalPrice}
+                                    quantity={item.quantity}
+                                    removeFromCart={this.deleteFromCartHandler}
+                                    incrementProduct={this.incrementProductHandler}
+                                    decrementProduct={this.decrementProductHandler}
                                 />
-                            ) }
+                            )}
                         </tbody>
                     </table>
                 </Wrap>

@@ -46,6 +46,7 @@ class Products extends Component {
                             id={ product.id }
                             imgUrl={ product.url }
                             name={ product.name }
+                            price={ product.totalPrice }
                             descp={ product.description }
                             addToCart={ this.addToCartHandler }
                         />

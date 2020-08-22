@@ -13,6 +13,8 @@ export let products = [
         name: 'Apple',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet egestas nibh a molestie. Vivamus eget pharetra neque. Sed nec elit eget est mollis maximus ac id erat.',
         quantity: 1,
+        price: 23,
+        totalPrice: 23
     },
     {
         id: 2,
@@ -20,6 +22,8 @@ export let products = [
         name: 'Home Office',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet egestas nibh a molestie. Vivamus eget pharetra neque. Sed nec elit eget est mollis maximus ac id erat.',
         quantity: 1,
+        price: 5000,
+        totalPrice: 5000
     },
     {
         id: 3,
@@ -27,6 +31,8 @@ export let products = [
         name: 'Home',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet egestas nibh a molestie. Vivamus eget pharetra neque. Sed nec elit eget est mollis maximus ac id erat.',
         quantity: 1,
+        price: 10000,
+        totalPrice: 10000
     },
     {
         id: 4,
@@ -34,6 +40,8 @@ export let products = [
         name: 'Laptop',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet egestas nibh a molestie. Vivamus eget pharetra neque. Sed nec elit eget est mollis maximus ac id erat.',
         quantity: 1,
+        price: 50,
+        totalPrice: 50
     },
     {
         id: 5,
@@ -41,6 +49,8 @@ export let products = [
         name: 'Make Up',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet egestas nibh a molestie. Vivamus eget pharetra neque. Sed nec elit eget est mollis maximus ac id erat.',
         quantity: 1,
+        price: 15,
+        totalPrice: 15
     },
     {
         id: 6,
@@ -48,6 +58,8 @@ export let products = [
         name: 'Workstation',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet egestas nibh a molestie. Vivamus eget pharetra neque. Sed nec elit eget est mollis maximus ac id erat.',
         quantity: 1,
+        price: 10000,
+        totalPrice: 10000
     },
 
 ];

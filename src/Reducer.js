@@ -6,13 +6,14 @@ import {
     INCREMENT_QUANTITIY,
     DECREMENT_QUANTITIY,
     CLOSE_MODAL,
+    // SUBMIT_PAYMENT
 } from './actions';
 
 // initial app level state
 const initialState = {
     products,
     cart: [],
-    isModalOpen: false
+    isModalOpen: false,
 };
 
 const reducer = ( state = initialState, action ) => {
@@ -54,6 +55,12 @@ const reducer = ( state = initialState, action ) => {
                 ...state,
                 isModalOpen: false
             }
+        
+        // case SUBMIT_PAYMENT:
+        //     console.log('Thanks for the payment!');
+        //     return {
+        //         ...state,
+        //     }
 
         default:
             return {

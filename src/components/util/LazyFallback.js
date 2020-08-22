@@ -1,13 +1,10 @@
 import React from 'react';
 
-// Custom Imports
-import Wrap from './Wrap';
-
-const LazyFallback = ({ txt }) => {
+const LazyFallback = () => {
     return (
-        <Wrap>
-            <strong>{ txt }</strong>
-        </Wrap>
+        <div className="loader">
+            <span className="loader-spinner"></span>
+        </div>
     )
 }
 

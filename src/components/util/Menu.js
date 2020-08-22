@@ -14,6 +14,9 @@ const Menu = () => {
                 <li>
                     <NavLink to="/cart">Cart</NavLink>
                 </li>
+                <li>
+                    <NavLink to="/checkout">Checkout</NavLink>
+                </li>
             </ul>
         </nav>
     )

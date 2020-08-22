@@ -95,6 +95,7 @@ header nav li {
 main {
   padding-top: var( --main-padding );
   padding-bottom: var( --main-padding );
+  min-height: 85vh;
 }
 
 .products .wrap {
@@ -116,9 +117,16 @@ main {
   margin-bottom: 20px;
 }
 
-.product > h2, .product > p {
+.product > h2, 
+.product > p, 
+.product > span {
   padding-left: var( --header-padding );
   padding-right: var( --header-padding );
+}
+
+.product > span {
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 button {
@@ -141,6 +149,11 @@ button:hover {
   background: var( --blue );
   border-color: var( --white );
   color: var( --white );
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
 }
 
 table {
@@ -182,6 +195,7 @@ table img {
   text-align: center;
   font-size: 15px;
   padding: 5px;
+  margin: 0;
 }
 
 .btn-group > button:first-child {
@@ -212,6 +226,11 @@ table img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.product-actions > button {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .modal {
@@ -279,11 +298,100 @@ table img {
   color: var(--blue);
 } */
 
+.checkout-form {
+  max-width: 440px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .1);
+}
+
+.checkout-form > h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input {
+  display: block;
+  border: 1px solid var(--blue);
+  padding: 10px 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  -moz-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  outline: 1px solid var(--blue);
+}
+
+.checkout-form > button {
+  margin: 0;
+  width: 100%;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.validation-errors {
+  padding: 10px;
+  background: var(--red);
+  color: var(--white);
+}
+
+.validation-errors > li {
+  list-style: disc;
+  font-size: 16px;
+  line-height: 1;
+  padding: 5px;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+}
+
+.loader-spinner {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: var(--blue);
+  border-bottom-color: var(--blue);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  animation: spin 1s ease-out forwards infinite;
+}
+
 @keyframes slideDown {
   from {
     top: 45%;
   } to {
     top: 50%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0)
+  } to {
+    transform: rotate(360deg);
   }
 }
 
